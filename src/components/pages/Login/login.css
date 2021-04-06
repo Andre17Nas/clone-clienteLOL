@@ -66,21 +66,24 @@ form{
 
 .inputbox{
     position: relative;
-    width: 300px;  
-    margin-bottom: 65px;
+    width: 300px;
+    margin-bottom: 40px;  
     display: flex;
     flex-direction: column;
     
 }
 
+
+
 .inputbox  input{
     position: absolute;
+    padding-top: 15px;
     padding-left: 10px;
     width: 290px;
-    height: 50px;
+    height: 35px;
     border: none;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: rgba(237, 237, 237);
     font-family: Roboto Medium;
     font-size: 16px;
     font-weight: 600;
@@ -100,26 +103,78 @@ span{
 }
 
 
-form .inputbox input:focus ~ span,
-form .inputbox input:valid ~ span
+.inputbox input:focus ~ span,
+.inputbox input:valid ~ span
 {
     transform: translateY(-8px);
     font-size: 8px;
+    color: rgb(128, 128, 128);
 }
-
-
 
 input:hover{
     /* background-color: #e7e7e7; */
     /* color: #7e7e7e; */
 
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(231, 231, 231);
+}
+
+#inputpass{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#eyeoff{
+    position: relative;
+    visibility: visible;
+    transform: translateX(250px);
+    top: 5px;
+    right: -8px;
+    z-index: 1;
+    cursor: pointer;
+    background-color: #FFF;
+    padding: 10px;
+
+    visibility: hidden;
+}
+
+.inputbox input[type="password"]:focus #eyeoff
+{
+    visibility: visible;
+    color: rgb(145, 53, 153);
+}
+
+.inputbox input:focus{
+    background-color: #FFF;
+    color: rgb(51, 51, 51);
+}
+
+.inputbox input[type="text"]:valid + input[type="password"]:valid ~ #entrar
+{
+    background-color: #d13639;
+    border: 3px solid #d13639;
+    display: none;
 }
 
 #check{
     margin-left: 0;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]
+{
+    appearance: none;
+    outline: none;
+    background-color: rgba(237, 237, 237);
+}
+
+input[type="checkbox"]:checked{
+    background-color: rgb(209, 54, 57);
+}
+
+input[type="checkbox"]:checked ~label{
+    color:#000;
 }
 
 .checkbox{
@@ -130,11 +185,12 @@ input:hover{
 
 }
 
-
-
 label{
+    margin-left: 8px;
     font-family: Roboto Medium;
     color: #999999;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 /*---- Buttons ----*/
@@ -153,6 +209,7 @@ label{
     height: 36px;
     border-radius: 4px;
     background-color: #FFF;
+    border: 3px solid rgb(243, 243, 243);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +218,7 @@ label{
 
 #btn-google:hover{
     cursor: pointer;
+    background-color: rgb(247, 247, 247);
 }
 
 
@@ -194,35 +252,44 @@ label{
 
 #btn-fb:hover{
     cursor: pointer;
+    background-color: rgb(9, 102, 222);
 }
 
-#entrar{
+.btn-signin{
     margin: 0 auto;
-    margin-top: 85px;
+    margin-top: 75px;
     width: 65px;
     height: 65px;
     border-radius: 20px;
     border: 3px solid #E8E8E8;
-
     display: flex;
     justify-content: center;
     align-items: center;
     color: #E8E8E8;
-}
-
-#entrar{
     cursor: pointer;
 }
 
+
 p{
-    width: 200px;
+    width: 180px;
     font-family: Roboto medium;
     font-size: 12px;
     color: #999999;
     text-align: center;
     margin-bottom: 0;
-    margin-top: 80px;
+    margin-top: 60px;
     font-weight: 700;
+}
+
+a{
+    text-decoration: none;
+    font-family: Roboto medium;
+    font-size: 10px;
+    color: #999999;
+}
+
+a:hover{
+    color: #000;
 }
 
 #version{
@@ -299,6 +366,13 @@ li#close:hover{
     transform: rotate(-45deg);
 }
 
+#btn-info:hover,
+#btn-info:hover #info{
+    cursor: pointer;
+    background-color: rgb(145, 53, 153);
+}
+
+
 .container-settings{
     display: flex;
     height: 85%;
@@ -310,8 +384,12 @@ li#close:hover{
     margin: 0 20px 20px 0;
     padding: 4px;
     border-radius: 4px;
-    background-color: #7A7C83;
+    background-color: rgb(110, 110, 110);
     color: #FFF;
     align-self: flex-end;
     cursor: pointer;
+}
+
+#settings:hover{
+    background-color: rgb(156, 156, 156);
 }

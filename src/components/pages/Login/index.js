@@ -2,10 +2,12 @@ import './login.css'
 import { MdHelp, MdSettings } from 'react-icons/md'
 import { SiFacebook} from 'react-icons/si'
 import { FcGoogle} from 'react-icons/fc'
-import { IoLogoApple } from 'react-icons/io'
+import { IoLogoApple, IoMdEye } from 'react-icons/io'
+import { BsFillEyeSlashFill } from 'react-icons/bs'
 import { BiRightArrowAlt} from 'react-icons/bi'
 
 export default function Login(){
+
     return(
         <div className="container">
             <div className="container-form">
@@ -14,12 +16,13 @@ export default function Login(){
             <div id="login">Fazer Login</div>
                 <form>
                     <div className="inputbox">
-                    <input type="text" require="required"/>
+                    <input type="text" required="required"/><br/>
                     <span>NOME DE USUÁRIO</span>
                     </div>
                     <div className="inputbox">
-                    <input type="password" require="required"/>
-                    <span>SENHA</span>
+                        <BsFillEyeSlashFill size={20} id="eyeoff"/>
+                        <input type="password" required id="inputpass"/>
+                        <span>SENHA</span>
                     </div>
                 
                     <div className="login-buttons">
@@ -30,14 +33,14 @@ export default function Login(){
                     
                 </form>
                     <div className="checkbox">
-                        <input type="checkbox" id="check"/>               
-                        <label>Manter Login</label>
+                        <input type="checkbox" id="check" name="check"/>               
+                        <label for="check">Manter Login</label>
                     </div>
-                    <div id="entrar">
+                    <div id="entrar" className="btn-signin">
                         <BiRightArrowAlt size={36}/>
                     </div>
-                <p>NÃO CONSEGUE INICIAR A SESSÃO? CRIAR CONTA</p>
-                <div id="version">V27.0.3</div>
+                <p><a href="#">NÃO CONSEGUE INICIAR A SESSÃO?</a> <a href="#">CRIAR CONTA</a></p>
+                <div id="version"><a href="#">V27.0.3</a></div>
             </div>
             <div className="container-background">
                 <nav>
@@ -51,7 +54,7 @@ export default function Login(){
                     <div id="info">!</div>
                 </div>
                 <div className="container-settings">
-                    <MdSettings size={16} id="settings"/>
+                    <MdSettings size={25} id="settings"/>
                 </div>
             </div>
         </div>
