@@ -1,0 +1,317 @@
+body{
+    background-color: #FFF;
+}
+
+.container{
+    margin: 10px auto;
+    padding: 0;
+    background-color: #bbbbbb;
+    box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.20);
+    display: flex;
+    flex-direction: row;
+    width: 1280px;
+    height: 720px;
+}
+
+.container-form{
+    background-color: #F9F9F9;
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#help{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    margin-right: 30px;
+}
+
+#help:hover{
+    cursor: pointer;
+}
+/*---- HEADER -----*/
+
+#logo{
+    background-color: #bbb;
+    width: 50px;
+    height: 50px;
+}
+
+#btn-help{
+    margin-top: 42px;
+    color: #bbb;
+}
+
+#login{
+    margin-top: 54px;
+    margin-bottom: 25px;
+    font-family: Roboto;
+    font-weight: 600;
+    color: #000;
+    font-size: 23px;
+}
+
+
+/*----- FORM -----*/
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputbox{
+    position: relative;
+    width: 300px;  
+    margin-bottom: 65px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.inputbox  input{
+    position: absolute;
+    padding-left: 10px;
+    width: 290px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: Roboto Medium;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+span{
+    position: absolute;
+    top: 8px;
+    left: 1px;
+    padding: 10px;
+    font-family: Roboto Medium;
+    font-size: 12px;
+    pointer-events: none;
+    color: #999;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+
+form .inputbox input:focus ~ span,
+form .inputbox input:valid ~ span
+{
+    transform: translateY(-8px);
+    font-size: 8px;
+}
+
+
+
+input:hover{
+    /* background-color: #e7e7e7; */
+    /* color: #7e7e7e; */
+
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+#check{
+    margin-left: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox{
+    width: 300px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+label{
+    font-family: Roboto Medium;
+    color: #999999;
+}
+
+/*---- Buttons ----*/
+
+.login-buttons{
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btn-google{
+    width: 90px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#btn-google:hover{
+    cursor: pointer;
+}
+
+
+#btn-apple{
+    width: 90px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #000;
+    color: #FFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-apple:hover{
+    cursor: pointer;
+}
+
+#btn-fb{
+    width: 90px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #1877F2;
+    color: #FFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-fb:hover{
+    cursor: pointer;
+}
+
+#entrar{
+    margin: 0 auto;
+    margin-top: 85px;
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    border: 3px solid #E8E8E8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E8E8E8;
+}
+
+#entrar{
+    cursor: pointer;
+}
+
+p{
+    width: 200px;
+    font-family: Roboto medium;
+    font-size: 12px;
+    color: #999999;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 80px;
+    font-weight: 700;
+}
+
+#version{
+    margin: 0 auto;
+    display: flex;
+    margin-right: 50px;
+    font-size: 12px;
+    
+    font-family: Roboto medium;
+    font-weight: 700;
+    color: #999999;
+}
+
+/* -------------------- */
+
+.container-background{
+    width: 880px;
+    background-image: url('../../../assets/LoL-Patch-Notes-11-4-Article-Banner.jpg');
+    background-size: 180%;
+    background-position: center;
+    background-position-y: 20%;
+    background-position-x: 30%;
+}
+
+nav{
+    width: 100%;
+}
+
+nav > ul{
+    margin: 0;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+nav > ul > li{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: Roboto thin;
+    font-size: 18px;
+
+
+}
+
+li:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+li#close:hover{
+    cursor: pointer;
+    background-color: #D13639;
+}
+
+#btn-info{
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    background-color: #D950E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info{
+    font-size: 2rem;
+    font-weight: 800;
+    background-color: #D950E5;
+    transform: rotate(-45deg);
+}
+
+.container-settings{
+    display: flex;
+    height: 85%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#settings{
+    margin: 0 20px 20px 0;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #7A7C83;
+    color: #FFF;
+    align-self: flex-end;
+    cursor: pointer;
+}
