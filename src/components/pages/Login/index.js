@@ -7,15 +7,24 @@ import { IoLogoApple, IoMdEye } from 'react-icons/io'
 import { BsFillEyeSlashFill } from 'react-icons/bs'
 import { BiRightArrowAlt} from 'react-icons/bi'
 
+import Config from '../Config'
+
 export default function Login(){
 
     const [inputText, setInputText] = useState('')
     const [inputPass, setInputPass] = useState('')
 
-    console.log("login: "+inputText+" senha: " + inputPass)
+    //console.log("login: "+inputText+" senha: " + inputPass)
+
+    function clientSettings(){
+        document.getElementById('box-settings').style.display = 'grid';
+    }
 
     return(
         <div className="container">
+            
+            <Config/>
+
             <div className="container-form">
             <div id="help"><MdHelp size={15} id="btn-help"/></div>
             <div id="logo"></div>
@@ -62,7 +71,7 @@ export default function Login(){
                 <div id="btn-info">
                     <div id="info">!</div>
                 </div>
-                <div className="container-settings">
+                <div className="container-settings" onClick={()=>clientSettings()}>
                     <MdSettings size={25} id="settings"/>
                 </div>
             </div>

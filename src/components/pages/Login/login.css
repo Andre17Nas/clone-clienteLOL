@@ -4,6 +4,7 @@ body{
 
 .container{
     margin: 10px auto;
+    position: relative;
     padding: 0;
     background-color: #bbbbbb;
     box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.20);
@@ -13,6 +14,8 @@ body{
     height: 720px;
 }
 
+
+/* ---------------------------------------  */
 .container-form{
     background-color: #F9F9F9;
     width: 400px;
@@ -389,3 +392,7 @@ li#close:hover{
 #settings:hover{
     background-color: rgb(156, 156, 156);
 }
+
+
+/* ------------------------ */
+
