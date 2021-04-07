@@ -30,9 +30,6 @@ body{
     margin-right: 30px;
 }
 
-#help:hover{
-    cursor: pointer;
-}
 /*---- HEADER -----*/
 
 #logo{
@@ -148,12 +145,6 @@ input:hover{
     color: rgb(51, 51, 51);
 }
 
-.inputbox input[type="text"]:valid + input[type="password"]:valid ~ #entrar
-{
-    background-color: #d13639;
-    border: 3px solid #d13639;
-    display: none;
-}
 
 #check{
     margin-left: 0;
@@ -173,7 +164,7 @@ input[type="checkbox"]:checked{
     background-color: rgb(209, 54, 57);
 }
 
-input[type="checkbox"]:checked ~label{
+input[type="checkbox"]:checked ~ label{
     color:#000;
 }
 
@@ -194,6 +185,11 @@ label{
 }
 
 /*---- Buttons ----*/
+
+button{
+    text-decoration: none;
+    border: none;
+}
 
 .login-buttons{
     margin: 0 auto;
