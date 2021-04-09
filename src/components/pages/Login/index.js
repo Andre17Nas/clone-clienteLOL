@@ -3,8 +3,8 @@ import './login.css'
 import { MdHelp, MdSettings, MdInfo } from 'react-icons/md'
 import { SiFacebook} from 'react-icons/si'
 import { FcGoogle} from 'react-icons/fc'
-import { IoLogoApple, IoMdEye } from 'react-icons/io'
-import { BsFillEyeSlashFill } from 'react-icons/bs'
+import { IoLogoApple } from 'react-icons/io'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { BiRightArrowAlt} from 'react-icons/bi'
 
 import Config from '../Config'
@@ -13,6 +13,8 @@ export default function Login(){
 
     const [inputText, setInputText] = useState('')
     const [inputPass, setInputPass] = useState('')
+    let showPass = false
+    
 
     //console.log("login: "+inputText+" senha: " + inputPass)
 
@@ -43,6 +45,18 @@ export default function Login(){
 
     }
 
+    
+        function showInputPass(){
+
+            if(showPass){
+                document.getElementById("inputpass").type = "text"           
+                showPass = false
+            }else{           
+                document.getElementById("inputpass").type = "password"
+                showPass = true
+            } 
+    }
+ 
     return(
         <div className="container">
             
@@ -57,13 +71,13 @@ export default function Login(){
                         <input type="text" required id="inputText" onChange={()=>setInputText(document.getElementById('inputText').value)}/><br/>
                         <span id="span">NOME DE USUÁRIO</span>                                          
                     </div>          
-                    <h5 id="h5"><MdInfo size={20}/>  DEVE TER PELO MENOS 2 CARACTERES</h5>        
+                    <h5 id="h5"><MdInfo size={20} id="h5-icon"/>Deve ter pelo menos 2 caracteres</h5>        
                     <div className="inputbox">
-                        <BsFillEyeSlashFill size={20} id="eyeoff"/>
                         <input type="password" required id="inputpass" onChange={()=>setInputPass(document.getElementById('inputpass').value)}/>
+                        <FaEyeSlash size={20} id="eyeoff" onClick={()=>showInputPass()}/>
                         <span>SENHA</span>
                     </div>
-                
+                    
                     <div className="login-buttons">
                         <button id="btn-fb"><SiFacebook size={22}/></button>
                         <button id="btn-google"><FcGoogle size={22}/></button>
@@ -78,7 +92,6 @@ export default function Login(){
                     <div id="entrar" className="btn-signin" onClick={()=>{validationInput()}}>
                         <BiRightArrowAlt size={36}/>
                     </div>
-
                 </form>
                 <p><a href="#">NÃO CONSEGUE INICIAR A SESSÃO?</a> <a href="#">CRIAR CONTA</a></p>
                 <div id="version"><a href="#">V27.0.3</a></div>

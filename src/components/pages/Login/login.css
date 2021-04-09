@@ -104,11 +104,16 @@ span{
 #h5{
     margin: -10px;
     transform: translateX(-30px);
-    font-size: 12px;
+    font-family: Roboto medium;
+    font-size: 14px;
     display: flex;
     visibility: hidden;
     align-items: center;
     color: #be2bcc;
+}
+
+#h5-icon{
+    margin-right: 10px;
 }
 
 
@@ -131,8 +136,15 @@ input:hover{
 #inputpass{
     display: flex;
     justify-content: flex-end;
+    appearance: none;
+    width: 251px;
+    padding-right: 40px;
 }
 
+input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
 
 
 .inputbox input:focus{
@@ -140,6 +152,13 @@ input:hover{
     color: rgb(51, 51, 51);
 }
 
+
+#checkpass{
+    width: 20px;
+    height: 20px;
+    z-index: 5;
+    background-color: #bbb;
+}
 
 
 #check{
@@ -193,7 +212,7 @@ button{
 
 .login-buttons{
     margin: 0 auto;
-    margin-top: 15px;
+    margin-top: 30px;
     width: 300px;
     display: flex;
     flex-direction: row;
@@ -394,4 +413,18 @@ li#close:hover{
 
 
 /* ------------------------ */
+
+
+#eyeoff{
+    position: absolute;
+    top: 15px;
+    transform: translateX(270px);
+    cursor: pointer;
+    visibility: visible;   
+    color: #000;
+    z-index: 4;
+}
+
+
+
 
