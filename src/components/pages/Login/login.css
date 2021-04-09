@@ -70,7 +70,6 @@ form{
     margin-bottom: 40px;  
     display: flex;
     flex-direction: column;
-    
 }
 
 
@@ -102,6 +101,16 @@ span{
     transition: 0.5s;
 }
 
+#h5{
+    margin: -10px;
+    transform: translateX(-30px);
+    font-size: 12px;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    color: #be2bcc;
+}
+
 
 .inputbox input:focus ~ span,
 .inputbox input:valid ~ span
@@ -110,6 +119,7 @@ span{
     font-size: 8px;
     color: rgb(128, 128, 128);
 }
+
 
 input:hover{
     /* background-color: #e7e7e7; */
@@ -123,25 +133,7 @@ input:hover{
     justify-content: flex-end;
 }
 
-#eyeoff{
-    position: relative;
-    visibility: visible;
-    transform: translateX(250px);
-    top: 5px;
-    right: -8px;
-    z-index: 1;
-    cursor: pointer;
-    background-color: #FFF;
-    padding: 10px;
 
-    visibility: hidden;
-}
-
-.inputbox input[type="password"]:focus #eyeoff
-{
-    visibility: visible;
-    color: rgb(145, 53, 153);
-}
 
 .inputbox input:focus{
     background-color: #FFF;
@@ -149,11 +141,16 @@ input:hover{
 }
 
 
+
 #check{
     margin-left: 0;
     width: 15px;
     height: 15px;
     cursor: pointer;
+}
+
+#check:checked ~ #label-check{
+    color: #000;
 }
 
 input[type="checkbox"]
@@ -176,16 +173,16 @@ input[type="checkbox"]:checked ~ label{
     margin-top: 10px;
     display: flex;
     align-items: center;
-
 }
 
-label{
+#label-check{
     margin-left: 8px;
-    font-family: Roboto Medium;
+    font-family: Roboto;
     color: #999999;
     font-size: 14px;
     cursor: pointer;
 }
+
 
 /*---- Buttons ----*/
 
@@ -196,6 +193,7 @@ button{
 
 .login-buttons{
     margin: 0 auto;
+    margin-top: 15px;
     width: 300px;
     display: flex;
     flex-direction: row;
@@ -266,6 +264,7 @@ button{
     align-items: center;
     color: #E8E8E8;
     cursor: pointer;
+    
 }
 
 
@@ -306,11 +305,11 @@ a:hover{
 
 .container-background{
     width: 880px;
-    background-image: url('../../../assets/LoL-Patch-Notes-11-4-Article-Banner.jpg');
-    background-size: 180%;
+    background-image: url('../../../assets/client-banner.jpg');
+    background-size: 150%;
     background-position: center;
     background-position-y: 20%;
-    background-position-x: 30%;
+    background-position-x: 60%;
 }
 
 nav{

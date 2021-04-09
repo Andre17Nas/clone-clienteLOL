@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './login.css'
-import { MdHelp, MdSettings } from 'react-icons/md'
+import { MdHelp, MdSettings, MdInfo } from 'react-icons/md'
 import { SiFacebook} from 'react-icons/si'
 import { FcGoogle} from 'react-icons/fc'
 import { IoLogoApple, IoMdEye } from 'react-icons/io'
@@ -20,6 +20,29 @@ export default function Login(){
         document.getElementById('box-settings').style.display = 'grid';
     }
 
+    function validationInput(){
+        if(inputText.length<="1"){
+            document.getElementById("inputText").style.outline = "none"
+            document.getElementById("inputText").style.backgroundColor = "rgb(244, 227, 245)"
+            document.getElementById("inputText").style.border = "3px solid rgb(235, 191, 239)"
+            document.getElementById("span").style.color = "#be2bcc"
+
+            document.getElementById("h5").style.visibility = "visible"        
+            document.getElementById("h5").style.paddingBottom = "30px"            
+            document.getElementById("h5").style.marginTop = "0"
+        }else{
+            document.getElementById("inputText").style.backgroundColor = "rgb(237, 237, 237)"
+            document.getElementById("inputText").style.border = "none"
+            document.getElementById("inputText").style.color = "rgb(51, 51, 51)"
+            document.getElementById("span").style.color = "#999"
+                  
+            document.getElementById("h5").style.marginTop = "-10px"
+            document.getElementById("h5").style.visibility = "hidden"
+            document.getElementById("h5").style.paddingBottom = "0"
+        }
+
+    }
+
     return(
         <div className="container">
             
@@ -32,9 +55,9 @@ export default function Login(){
                 <form>
                     <div className="inputbox">
                         <input type="text" required id="inputText" onChange={()=>setInputText(document.getElementById('inputText').value)}/><br/>
-                        <span>NOME DE USUÁRIO</span>
-                    </div>
-
+                        <span id="span">NOME DE USUÁRIO</span>                                          
+                    </div>          
+                    <h5 id="h5"><MdInfo size={20}/>  DEVE TER PELO MENOS 2 CARACTERES</h5>        
                     <div className="inputbox">
                         <BsFillEyeSlashFill size={20} id="eyeoff"/>
                         <input type="password" required id="inputpass" onChange={()=>setInputPass(document.getElementById('inputpass').value)}/>
@@ -49,10 +72,10 @@ export default function Login(){
                 
                     <div className="checkbox">
                         <input type="checkbox" id="check" name="check"/>               
-                        <label for="check">Manter Login</label>
+                        <label id="label-check" for="check">Manter Login</label>
                     </div>
 
-                    <div id="entrar" className="btn-signin">
+                    <div id="entrar" className="btn-signin" onClick={()=>{validationInput()}}>
                         <BiRightArrowAlt size={36}/>
                     </div>
 
@@ -71,25 +94,27 @@ export default function Login(){
                 <div id="btn-info">
                     <div id="info">!</div>
                 </div>
-                <div className="container-settings" onClick={()=>clientSettings()}>
-                    <MdSettings size={25} id="settings"/>
+                <div className="container-settings" >
+                    <MdSettings size={25} id="settings" onClick={()=>clientSettings()}/>
                 </div>
             </div>
                 { 
 
                     useEffect(() => {
         
-                            function validationInput(){
+                            function validationButton(){
                                 if(inputText !== '' && inputPass !== ''){
                                     document.getElementById('entrar').style.backgroundColor = '#d13639';
                                     document.getElementById('entrar').style.border = '#d13639';
+                                    document.getElementById('entrar').style.cursor = "pointer"
                                 }else{
+                                    document.getElementById('entrar').style.cursor = "auto"
                                     document.getElementById('entrar').style.backgroundColor = 'transparent';                                   
                                     document.getElementById('entrar').style.border = '3px solid #E8E8E8';
                                 }
                             }
 
-                            validationInput()
+                            validationButton()
 
                         }, [inputText, inputPass])
 
